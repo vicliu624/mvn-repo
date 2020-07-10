@@ -51,4 +51,21 @@ juaner-platform-dependency-management
 
 ```
 
+#### 模块application.properties
+
+```
+info.groupId= @project.groupId@
+info.artifactId= @project.artifactId@
+info.version= @project.version@
+
+```
+
+#### 模块application-XXX.properties
+
+```
+logging.registry.files[0].name=app_log
+logging.registry.files[0].description=application's log 
+logging.registry.files[0].path=../logs
+logging.registry.files[0].filename=(${spring.application.name}).+(.log)$
+```
 
