@@ -65,7 +65,9 @@ info.version= @project.version@
 ```
 logging.registry.files[0].name=app_log
 logging.registry.files[0].description=application's log 
+#logback.xml配置的实际的日志目录
 logging.registry.files[0].path=../logs
+#logback.xml配置的实际的日志文件名
 logging.registry.files[0].filename=(${spring.application.name}).+(.log)$
 ```
 
