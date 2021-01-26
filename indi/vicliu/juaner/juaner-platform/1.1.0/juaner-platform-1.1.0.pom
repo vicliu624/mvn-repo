@@ -19,6 +19,7 @@
         <module>gateway</module>
         <module>id</module>
         <module>admin</module>
+        <module>sentinel-datasource-nacos</module>
 
     </modules>
 
@@ -36,17 +37,17 @@
 
         <spring-boot-admin.version>2.2.3</spring-boot-admin.version>
 
-        <nacos-client.version>1.1.4</nacos-client.version>
-        <alibaba-nacos.version>2.1.1.RELEASE</alibaba-nacos.version>
+        <nacos-client.version>1.4.0</nacos-client.version>
+        <alibaba-nacos.version>2.2.3.RELEASE</alibaba-nacos.version>
 
-        <fastjson.version>1.2.62</fastjson.version>
+        <fastjson.version>1.2.75</fastjson.version>
 
-        <lombok.version>1.16.20</lombok.version>
+        <lombok.version>1.18.16</lombok.version>
 
         <logstash-logback.version>6.2</logstash-logback.version>
-
+        <common-lang3.version>3.10</common-lang3.version>
         <mysql.version>8.0.19</mysql.version>
-        <druid.version>1.1.18</druid.version>
+        <druid.version>1.2.4</druid.version>
         <tk.mybatis.spring-boot.version>2.1.5</tk.mybatis.spring-boot.version>
         <tk.mybatis.version>4.1.5</tk.mybatis.version>
         <mybatis-generator-maven-plugin.version>1.3.7</mybatis-generator-maven-plugin.version>
@@ -61,6 +62,7 @@
         <registry.url>127.0.0.1:5010</registry.url>
 
         <sentinel.version>1.8.0</sentinel.version>
+        <prometheus.version>1.6.3</prometheus.version>
 
         <github.global.server>github</github.global.server>
         <maven-dependency-plugin.version>2.8</maven-dependency-plugin.version>
@@ -103,6 +105,16 @@
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-registry-prometheus</artifactId>
+            <version>${prometheus.version}</version>
+        </dependency>
+
         <!--日志跟踪-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -140,12 +152,31 @@
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
             <version>${alibaba-nacos.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.alibaba.nacos</groupId>
+                    <artifactId>nacos-client</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
             <version>${alibaba-nacos.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.alibaba.nacos</groupId>
+                    <artifactId>nacos-client</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.alibaba.nacos/nacos-client -->
+        <dependency>
+            <groupId>com.alibaba.nacos</groupId>
+            <artifactId>nacos-client</artifactId>
+            <version>${nacos-client.version}</version>
         </dependency>
 
         <dependency>
