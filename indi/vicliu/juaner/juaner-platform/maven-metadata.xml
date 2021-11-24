@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>indi.vicliu.juaner</groupId>
+  <artifactId>juaner-platform</artifactId>
+  <versioning>
+    <release>cloud-native-0.0.1</release>
+    <versions>
+      <version>cloud-native-0.0.1</version>
+    </versions>
+    <lastUpdated>20211124032733</lastUpdated>
+  </versioning>
+</metadata>
