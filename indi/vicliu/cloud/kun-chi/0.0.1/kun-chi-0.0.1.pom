@@ -11,14 +11,14 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>common</module>
+        <module>kunchi-spring-boot-starter</module>
         <module>upms</module>
     </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <platform.version>0.0.1</platform.version>
-        <java.version>1.8</java.version>
+        <java.version>17</java.version>
         <spring-boot.version>2.6.3</spring-boot.version>
         <spring-cloud.version>2021.0.0</spring-cloud.version>
         <springframework.version>5.3.15</springframework.version>
@@ -38,54 +38,13 @@
         <javax.servlet-api.version>4.0.1</javax.servlet-api.version>
         <jts.version>1.13</jts.version>
         <github.global.server>github</github.global.server>
+        <maven-jar-plugin.version>3.2.2</maven-jar-plugin.version>
+        <maven-resources-plugin.version>3.2.0</maven-resources-plugin.version>
+        <maven-dependency-plugin.version>3.2.0</maven-dependency-plugin.version>
+        <maven-model.version>3.6.3</maven-model.version>
+        <spring-cloud-kubernetes.version>1.1.10.RELEASE</spring-cloud-kubernetes.version>
+        <logstash-logback.version>7.0.1</logstash-logback.version>
     </properties>
-
-    <dependencies>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>io.micrometer</groupId>
-            <artifactId>micrometer-core</artifactId>
-            <version>${micrometer.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>io.micrometer</groupId>
-            <artifactId>micrometer-registry-prometheus</artifactId>
-            <version>${micrometer.version}</version>
-        </dependency>
-
-        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>${lombok.version}</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <artifactId>commons-lang3</artifactId>
-            <groupId>org.apache.commons</groupId>
-            <version>${common-lang3.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>${slf4j.version}</version>
-        </dependency>
-
-        <!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-            <version>${fastjson.version}</version>
-        </dependency>
-    </dependencies>
 
     <dependencyManagement>
         <dependencies>
@@ -119,6 +78,7 @@
                     <executions>
                         <execution>
                             <goals>
+                                <goal>build-info</goal>
                                 <goal>repackage</goal>
                             </goals>
                         </execution>
