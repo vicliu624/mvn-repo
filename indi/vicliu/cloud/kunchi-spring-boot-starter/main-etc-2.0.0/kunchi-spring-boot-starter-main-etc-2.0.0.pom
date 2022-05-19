@@ -46,6 +46,7 @@
         <druid.version>1.2.9</druid.version>
         <tk.mybatis.spring-boot.version>2.1.5</tk.mybatis.spring-boot.version>
         <maven-deploy-plugin>2.8.1</maven-deploy-plugin>
+        <httpclient.version>4.5.13</httpclient.version>
     </properties>
 
     <dependencies>
@@ -252,6 +253,13 @@
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-jwt</artifactId>
             <version>${spring-security-jwt.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>${httpclient.version}</version>
         </dependency>
     </dependencies>
 
