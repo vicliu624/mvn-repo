@@ -18,7 +18,7 @@
         <mapper-module.version>4.2.1</mapper-module.version>
         <freemarker.version>2.3.31</freemarker.version>
         <generator.version>1.4.1</generator.version>
-        <galaxy.version>0.0.2</galaxy.version>
+        <galaxy.version>0.0.4</galaxy.version>
         <persistence-api.version>1.0.2</persistence-api.version>
         <swagger.version>1.6.5</swagger.version>
         <lombok.version>1.18.24</lombok.version>
